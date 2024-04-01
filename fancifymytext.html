@@ -8,40 +8,58 @@
 	</head>
 
 	<body>
-		<h1>Fancify my Text</h1>
 
-		<form>
-			<!-- <input type = 'text', cols = '30', rows = '4'> -->
-		</form>
+		<!-- Your UI controls go here -->
+
+		<h1>Fancify my Text</h1>
 
 		<fieldset>
 			<legend>Text</legend>
-			<textarea name = 'Text', cols = '30', rows = '4'></textarea>
+			<textarea id = 'textSize', name = 'Text', cols = '30', rows = '4'></textarea>
 		</fieldset>
 
 		<br>
 
 		<fieldset>
 			<legend>Fancify</legend>
-			<button id = 'Bigger', style = 'background-color: red; border-radius: 10px;'>Bigger</button>
+
+			<!-- use onclick button -->
+			<button 
+			onclick = "fontSize()", 
+			id = 'Bigger', 
+			style = 'background-color: blue; border-radius: 10px; color: red; font-weight: bold;'>
+			    Bigger
+		    </button>
+
+			<!-- use addEventListener button -->
+			<button 
+			id = 'Smaller', 
+			style = 'background-color: blue; border-radius: 10px; color: red; font-weight: bold;'>
+			    Smaller
+			</button>
 			
+			<!-- radio button -->
 			<form>
 				FancyShmancy:
-				<input type = 'radio', name = 'FancyFont'>
+				<input type = 'radio', name = 'FancyFont', id = 'fsButton', onclick = "styleChange()", onchange = "alertMessage1()">
 				BoringBetty:
-				<input type = 'radio', name = 'FancyFont'>
+				<input type = 'radio', name = 'FancyFont', id = 'bbButton', onclick = "styledefault()", onchange = "alertMessage2()">
 			</form>
+
+			<!-- MOO button -->
+			<button
+			onclick = "Mooafy()"
+			style = 'background-color: blue; border-radius: 10px; color: red; font-weight: bold;'>
+				Moo
+			</button>
 		</fieldset>
 
 		<!-- <script>
 		    alert("Hello, world!");
 		</script> -->
 
-        <script src = "fancifymytext.js">
-		</script>
-		
-
-		<!-- Your UI controls go here -->
+		<!-- connect to JS file -->
+        <script src = "fancifymytext.js"></script>
 		
 	</body>
 </html>
